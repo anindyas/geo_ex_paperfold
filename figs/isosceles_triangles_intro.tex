@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (-3,-1);
+    \coordinate (B) at (3,-1);
+    \coordinate (C) at (-1.5,4);
+
+    \draw (A) -- (B) -- (C) -- (A);
+    \foreach \x in {A, B, C}
+        \draw (O) -- (\x);
+    
+    \draw (O) -- ($(A)!(O)!(B)$);
+    \draw (O) -- ($(A)!(O)!(C)$);
+    \draw (O) -- ($(B)!(O)!(C)$);
+
+    \node[label={south west:$A$}] at (A) {};
+    \node[label={south east:$B$}] at (B) {};
+    \node[label={above:$C$}] at (C) {};
+
+    \node[label={north east:$X$}] at ($(B)!(O)!(C)$) {};
+    \node[label={north west:$Y$}] at ($(A)!(O)!(C)$) {};
+    \node[label={south:$Z$}]      at ($(A)!(O)!(B)$) {};
+
+\end{tikzpicture}
